@@ -6,7 +6,6 @@ angular.module('LunchCheck', [])
 
 LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
-  $scope.name = "Yaakov";
   $scope.food = "";
 
   $scope.checkFood = function () {
@@ -20,13 +19,13 @@ function LunchCheckController($scope) {
     }
 
   };
+  // will return the amount of food in a comma seperated list, empty strings do not
+  // count as food and are ignored
   function calculateFoodAmount(food){
-    if(food !==""){ //empty string split with ',' returns length of 1
-      return $scope.food.split(",").length;
-    }
-    else {
-      return 0;
-    }
+      return $scope.food.split(",").filter(function(elem) {
+        return elem.length>0;
+    }).length;
+
   }
 
 }
