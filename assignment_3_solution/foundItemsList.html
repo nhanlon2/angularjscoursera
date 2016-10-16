@@ -1,0 +1,12 @@
+
+<ol>
+  <span ng-repeat="item in foundItems">
+    <li>
+    <list-item-details/>
+  </li>
+  <button ng-click="onRemove({index:$index});" >Remove Item</button>
+</span>
+<div ng-if="foundItems && foundItems.length===0" >
+  <h4>"Nothing found"</h4>
+</div>
+</ol>
