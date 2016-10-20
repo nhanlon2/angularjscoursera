@@ -1,9 +1,9 @@
-<a ui-sref="home">Home</a> &lt; <span>List</span>
+<a ui-sref="home">Home</a> &lt; <span>List of Menu Categories</span>
 
-  <h3>List of Menu Categories</h3>
   <ul>
-    <li ng-repeat="category in listOfCategories.categories" ui-sref="categoryMenuItems({cateory: category.short_name})">
+    <li ng-repeat="category in listOfCategories.categories" ui-sref="categoryMenuItems({category: category.short_name})">
       {{ category.id}}, {{ category.short_name }},
       {{ category.name }}, {{ category.special_instructions }}
+      <a ui-sref="categoryMenuItems({category: category.short_name})">See Menu Details</a>
     </li>
   </ul>
