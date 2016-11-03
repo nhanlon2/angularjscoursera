@@ -1,21 +1,36 @@
-<fieldset>
+<fieldset >
   <legend>SignUp</legend>
   <form name='signupForm' novalidate>
 
-    <input type="text" name="username" placeholder="Pick a username"
-      ng-model="signup.user.username"
+    <input type="text" name="firstname" placeholder="Pick a firstname"
+      ng-model="signup.user.firstname"
       required
       minlength="4"
       ng-maxlength="10">
-      {{ signup.user.username }}
+      {{ signup.user.firstname }}
       <span
-        ng-if="(signupForm.username.$error.minlength || signupForm.username.$error.required) && signupForm.username.$touched">
-        Username must be at least 4 characters long
+        ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required) && signupForm.firstname.$touched">
+        firstname must be at least 4 characters long
       </span>
-      <span ng-if="signupForm.username.$error.maxlength && signupForm.username.$touched">
-        Username must not be longer than 10 characters
+      <span ng-if="signupForm.firstname.$error.maxlength && signupForm.firstname.$touched">
+        firstname must not be longer than 10 characters
       </span>
       <br>
+
+      <input type="text" name="lastname" placeholder="Pick a lastname"
+        ng-model="signup.user.lastname"
+        required
+        minlength="4"
+        ng-maxlength="10">
+        {{ signup.user.lastname }}
+        <span
+          ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required) && signupForm.lastname.$touched">
+          lastname must be at least 4 characters long
+        </span>
+        <span ng-if="signupForm.lastname.$error.maxlength && signupForm.lastname.$touched">
+          lastname must not be longer than 10 characters
+        </span>
+        <br>
 
     <input type="email" name="email" placeholder="Email"
       ng-model="signup.user.email"
