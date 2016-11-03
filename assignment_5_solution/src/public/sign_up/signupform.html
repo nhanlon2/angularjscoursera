@@ -48,12 +48,10 @@
       </span>
       <br>
 
-    <button
-      ng-disabled="signupForm.$invalid"
-      ng-click="signup.submit()">Submit</button>
+  <input type="submit" ng-disabled="signupForm.$invalid" ng-click="signup.submit()" value="Submit" />
 
       <div style="margin-top: 10px;">
-        Form valid? {{ signupForm.$valid }}
+        Form invalid? {{ signupForm.$invalid }}
       </div>
   </form>
 </fieldset>
