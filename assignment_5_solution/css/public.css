@@ -111,6 +111,9 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+input {
+  color: black;
+}
 /* END SINGLE CATEGORY PAGE */
 
 
