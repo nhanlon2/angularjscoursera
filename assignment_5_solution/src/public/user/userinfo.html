@@ -1,4 +1,4 @@
-<span ng-if='userinfo.user==undefined'>Not Signed Up Yet. Sign up Now!</span>
+<span ng-if='userinfo.user==undefined'>Not Signed Up Yet. <a ui-sref='public.sign_up'>Sign up Now!</a></span>
 <div class="container" ng-if='userinfo.user!==undefined'>
 
   <h2  class="text-center">
@@ -8,7 +8,7 @@
   Lastname: <span>{{ userinfo.user.lastname}}</span><br/>
   Email: <span>{{ userinfo.user.email}}</span><br/>
   Phone: <span>{{ userinfo.user.phone}}</span><br/>
-  <span> Favourite item on the menu </span>
+  <span> Favourite item on the menu: </span><br/>
   <menu-item
              menu-item="userinfo.user.menuitemdata">
   </menu-item>
