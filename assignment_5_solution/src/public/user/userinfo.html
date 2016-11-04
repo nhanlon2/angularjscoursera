@@ -1,0 +1,17 @@
+<span ng-if='userinfo.user==undefined'>Not Signed Up Yet. Sign up Now!</span>
+<div class="container" ng-if='userinfo.user!==undefined'>
+
+  <h2  class="text-center">
+    {{ userinfo.user.firstname}} {{ userinfo.user.firstname}}'s profile'
+  </h2>
+  Firstname: <span>{{ userinfo.user.firstname}}</span><br/>
+  Lastname: <span>{{ userinfo.user.lastname}}</span><br/>
+  Email: <span>{{ userinfo.user.email}}</span><br/>
+  Phone: <span>{{ userinfo.user.phone}}</span><br/>
+  <span> Favourite item on the menu </span>
+  <menu-item
+             menu-item="userinfo.user.menuitemdata">
+  </menu-item>
+
+
+</div>

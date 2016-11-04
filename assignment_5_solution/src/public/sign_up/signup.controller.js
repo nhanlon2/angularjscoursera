@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['MenuItemService'];
-function SignUpController(MenuItemService) {
+SignUpController.$inject = ['MenuItemService','UserService'];
+function SignUpController(MenuItemService,UserService) {
   var signup = this;
 
   signup.submit = function () {
@@ -16,6 +16,8 @@ function SignUpController(MenuItemService) {
       if(menuitemdata){
         signup.completed = true;
         signup.nosuchmenuitem=false;
+        signup.user.menuitemdata=menuitemdata;
+        UserService.setUser(signup.user);
       }
       else{
         signup.nosuchmenuitem=true;
