@@ -4,11 +4,19 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-function SignUpController() {
+SignUpController.$inject = ['MenuItemService'];
+function SignUpController(MenuItemService) {
   var signup = this;
 
   signup.submit = function () {
-    signup.completed = true;
+    var data = MenuItemService.getDataForMenuItem(signup.user.favorite);
+    if(data){
+      signup.completed = true;
+      signup.nosuchmenuitem=false;
+    }
+    else{
+      signup.nosuchmenuitem=true;
+    }
   };
 }
 

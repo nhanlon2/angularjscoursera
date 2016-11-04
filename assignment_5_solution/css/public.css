@@ -114,6 +114,9 @@ h3.menu-item-title {
 input {
   color: black;
 }
+input[type="submit" i]:disabled {
+  color:graytext;
+}
 /* END SINGLE CATEGORY PAGE */
 
 
