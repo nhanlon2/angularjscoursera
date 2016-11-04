@@ -25,6 +25,7 @@ function SignUpController(MenuItemService,UserService) {
     })
     .catch(function (error) {
       console.log("Error contacting menu items server.");
+      signup.nosuchmenuitem=true;
     });
   };
 }
